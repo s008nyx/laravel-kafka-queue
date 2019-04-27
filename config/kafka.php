@@ -12,7 +12,7 @@ return [
     'driver' => 'kafka',
 
     /*
-     * The name of default queue.
+     * 默认队列名称
      */
     'queue' => env('KAFKA_QUEUE', 'default'),
 
@@ -27,13 +27,25 @@ return [
     'brokers' => env('KAFKA_BROKERS', 'localhost'),
 
     /*
-     * Determine the number of seconds to sleep if there's an error communicating with kafka
-     * If set to false, it'll throw an exception rather than doing the sleep for X seconds.
+     * 如果与kafka通信时出错，要休眠的秒数,如果设置为false，它将抛出异常，而不是在X秒内进行休眠。
      */
     'sleep_on_error' => env('KAFKA_ERROR_SLEEP', 5),
 
     /*
-     * Sleep when a deadlock is detected
+     * 检测到死锁时休眠
      */
     'sleep_on_deadlock' => env('KAFKA_DEADLOCK_SLEEP', 2),
+
+    /*
+     * 全局默认配置
+     */
+    'defaultConf' => [
+        'enable.auto.commit' => 'false',
+        'offset.store.method' => 'broker',
+        //'security.protocol' => 'SASL_SSL',
+        //'sasl.mechanisms' => 'PLAIN',
+        //'sasl.username' => '',
+        //'sasl.password' => '',
+        //'ssl.ca.location' => '/ca-cert.pem',
+    ]
 ];

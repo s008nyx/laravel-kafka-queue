@@ -58,8 +58,9 @@ class KafkaConnector implements ConnectorInterface
         $conf = $this->container->makeWith('queue.kafka.conf', []);
         $conf->set('group.id', Arr::get($config, 'consumer_group_id', 'php-pubsub'));
         $conf->set('metadata.broker.list', $config['brokers']);
-        $conf->set('enable.auto.commit', 'false');
-        $conf->set('offset.store.method', 'broker');
+        foreach ($config['defaultConf'] as $key => $val) {
+            $conf->set($key, $val);
+        }
         $conf->setDefaultTopicConf($topicConf);
 
         /** @var KafkaConsumer $consumer */

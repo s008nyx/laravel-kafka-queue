@@ -168,7 +168,7 @@ class KafkaQueue extends Queue implements QueueContract
                 case RD_KAFKA_RESP_ERR__TIMED_OUT:
                     break;
                 default:
-                    throw new QueueKafkaException($message->errstr(), $message->err);
+                    throw new KafkaQueueException($message->errstr(), $message->err);
             }
         } catch (\RdKafka\Exception $exception) {
             throw new KafkaQueueException('Could not pop from the queue', 0, $exception);

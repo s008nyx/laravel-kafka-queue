@@ -25,7 +25,6 @@ class KafkaJob extends Job implements JobContract
 {
     use DetectsDeadlocks;
 
-
     /**
      * @var KafkaQueue
      */
