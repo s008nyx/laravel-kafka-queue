@@ -15,7 +15,7 @@ use Illuminate\Support\ServiceProvider;
  *
  * @author Tongle Xu <xutongle@gmail.com>
  */
-class KafkaServiceProvider extends ServiceProvider
+class KafkaQueueServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.

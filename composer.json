@@ -21,7 +21,7 @@
     },
     "laravel": {
       "providers": [
-        "Larva\\Kafka\\Queue\\KafkaServiceProvider"
+        "Larva\\Kafka\\Queue\\KafkaQueueServiceProvider"
       ]
     }
   },
