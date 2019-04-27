@@ -53,6 +53,19 @@ add config
              * Sleep when a deadlock is detected
              */
             'sleep_on_deadlock' => env('KAFKA_DEADLOCK_SLEEP', 2),
+            
+            /*
+             * 全局默认配置
+             */
+            'defaultConf' => [
+                'enable.auto.commit' => 'false',
+                'offset.store.method' => 'broker',
+                //'security.protocol' => 'SASL_SSL',
+                //'sasl.mechanisms' => 'PLAIN',
+                //'sasl.username' => '',
+                //'sasl.password' => '',
+                //'ssl.ca.location' => '/ca-cert.pem',
+            ]
         ],
 ```
 
